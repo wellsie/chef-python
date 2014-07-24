@@ -2,6 +2,12 @@ python Cookbook CHANGELOG
 =========================
 This file is used to list changes made in each version of the python cookbook.
 
+v1.4.8
+------
+
+- Install python27 and python27-devel when platform is amazon
+- When building from source on rhel platforms set make options to altinstall
+
 v1.4.6
 ------
 
