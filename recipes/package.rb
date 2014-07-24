@@ -20,9 +20,11 @@
 
 major_version = node['platform_version'].split('.').first.to_i
 
+if platform?('amazon')
+  python_pkgs = ['python27', 'python27-devel']
 # COOK-1016 Handle RHEL/CentOS namings of python packages, by installing EPEL
 # repo & package
-if platform_family?('rhel') && major_version < 6
+elsif platform_family?('rhel') && major_version < 6
   include_recipe 'yum-epel'
   python_pkgs = ["python26", "python26-devel"]
   node.default['python']['binary'] = "/usr/bin/python26"
